@@ -1,3 +1,5 @@
+
+//book database
 let books = [
     {
         title: "Full Stack web dev",
@@ -20,6 +22,7 @@ let books = [
 
 ];
 
+//author database
 let authors = [
     {
         id: 1,
@@ -39,6 +42,7 @@ let authors = [
 
 ];
 
+//publication database
 let publications = [
     {
         id: 1,
@@ -51,4 +55,6 @@ let publications = [
         books: [12345987]
     }
 ];
+
+//exporting databases
 module.exports = { books, authors, publications };

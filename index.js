@@ -1,13 +1,30 @@
+require("dotenv").config();
+
+//frameworks
 const express = require('express');
-let { books, authors, publications } = require('./database');
+const mongoose = require('mongoose');
+
+//database
+let { books, authors, publications } = require('./database/database');
+
+//Initialization
 const app = express();
 app.use(express.json())
 
+//Models
+const BookModel = require('./database/book');
+const AuthorModel = require('./database/author');
+const PublicationModel = require('./database/publication');
+
 //?---------------------------------------------------------------------------------------
+
+//database connection establish
+mongoose.connect(process.env.MONGO_URL).then(() => console.log("connection established"));
+
 
 //!BOOK GET
 
-/*
+/* 
 Route           /book/
 Description     get all books
 Access          PUBLIC
